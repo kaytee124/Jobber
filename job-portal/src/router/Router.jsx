@@ -17,6 +17,7 @@ import Applicanthome from '../pages/Applicanthome.jsx';
 import Applicantjobdetails from '../pages/Applicantjobdetails.jsx';
 import Employercreatejob from '../pages/Employercreatejob.jsx';
 import EmployerpostJob from '../pages/Employerpostjobs.jsx';
+import Employerupdatejob from '../pages/Employerupdatejob.jsx';
 
   const router = createBrowserRouter([
     {
@@ -46,11 +47,16 @@ import EmployerpostJob from '../pages/Employerpostjobs.jsx';
         {
           path: "edit-job/:id",
           element: <UpdateJob/>,
-          loader: ({params}) => fetch(`http://localhost:5000/all-jobs/${params.id}`)
+          loader: ({params}) => fetch(`http://13.60.171.7:5000/all-jobs/${params.id}`)
         },
         {
           path:"/employer-dashboard",
           element: <Employermyjobs/>,
+        },
+        {
+          path:"/employer-update-job/:id",
+          element: <Employerupdatejob/>,
+          loader: ({params}) => fetch(`http://13.60.171.7:5000/all-jobs/${params.id}`)
         },
         {
           path:"/applicant-job-details/:id",

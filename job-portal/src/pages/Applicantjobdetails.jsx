@@ -11,7 +11,7 @@ const Applicantjobdetails = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all-jobs/${id}`)
+    fetch(`http://13.60.171.7:5000/all-jobs/${id}`)
       .then((res) => res.json())
       .then((data) => setJob(data));
   }, [id]);
@@ -23,7 +23,7 @@ const Applicantjobdetails = () => {
       inputPlaceholder: "Enter the URL"
     });
     if (url) {
-      fetch(`http://localhost:5000/all-jobs/${id}`, {
+      fetch(`http://13.60.171.7:5000/all-jobs/${id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
